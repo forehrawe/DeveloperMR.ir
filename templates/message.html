@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Send</title>
+</head>
+<body>
+    <div class="conv">
+        <form method="POST">
+            <textarea name="message" class="message"></textarea>
+            <input type="submit" class="btn" required />
+            {% if status is not none %}
+                <p style="color: white;">{{ status }}</p>
+            {% endif %}
+        </form>
+    </div>
+</body>
+<style>
+    body, html {
+        background: linear-gradient(to left,#161616, #313131);
+        background-attachment: fixed; 
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+
+    }
+
+
+    .conv {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 340px;
+        height: 400px;
+        padding: 20px;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.094);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(251, 255, 0, 0.61);
+        font-family: arial;
+    }
+    @media only screen and (max-width: 767px){
+        .conv{
+            width: 300px;
+        }
+    }
+
+
+    .message {
+        width: 97%;
+        height: 200px;
+        margin: 0px -5px;
+        padding: 10px;
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(0,0,0,0.3);
+        border-radius: 10px;
+        color: #fff;
+        font-size: 15px;
+        text-align: left;
+        outline: none;
+        resize: none;
+    }
+
+
+    .btn {
+        display: inline-block;
+        padding: 10px 0;
+        width: 100%;
+        font-size: 15px;
+        color: #fff;
+        background: #ffff00c3;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        margin-top: 10px;
+        text-decoration: none;
+        font-family: verdana;
+    }
+</style>
+</html>
