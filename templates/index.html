@@ -85,17 +85,21 @@
         margin-bottom: 10px;
         user-select: none;
         position: relative;
-        top: 200px;
         width: 90%;
         height: 30px;
         display: flex;
-        margin: 4pxs;
         justify-content: center;
         align-items: center;
         border-radius: 20px;
         border: 2px solid rgba(255, 255, 255, 0.649);
-
+        top: 200px;
+        /* انیمیشن */
+        opacity: 0; /* متن اول نامرئی */
+        transform: translateY(100px); /* پایین‌تر از جای اصلی */
+        animation: slideUp 1s forwards;
+        animation-delay: 0.5s; /* می‌تونی برای هر لینک جداگانه تنظیم کنی */
     }
+
     @media only screen and (max-width: 767px) {
         .link{
             top: 210px;
@@ -125,9 +129,17 @@
         direction: ltr;
         text-align: left;
         line-height: 1.4;
-        margin: 10px
+        margin: 10px;
+        transform: translateY(50px); /* شروع پایین‌تر */
+        animation: slideUp 1s forwards;
 
     }
+     @keyframes slideUp {
+    to {
+      opacity: 1;
+      transform: translateY(0); /* رسیدن به جای اصلی */
+    }
+  }
     
     .MR {
         user-select: none;
